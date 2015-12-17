@@ -1,0 +1,25 @@
+.led ul li {
+    float: left;
+    width: 5px;
+    height: 5px;
+    background: #444;
+    box-shadow: 0 0 0 #444;
+    margin-right: 6px;
+    margin-top: 6px;
+    border-radius: 360px;
+}
+
+.led ul li.red {
+    background: #FF2F01;
+    box-shadow: 0 0 16px #FF2F01;
+}
+
+.led ul li.yellow {
+    background: #F9D700;
+    box-shadow: 0 0 16px #F9D700;
+}
+
+.led ul li.green {
+    background: #00FF00;
+    box-shadow: 0 0 16px #00FF00;
+}

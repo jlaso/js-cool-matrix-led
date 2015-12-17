@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico?v=1"/>
+    <title>Cool Led Matrix</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="cool-led-matrix.js"></script>
+    <link href='cool-led-matrix.css' rel='stylesheet' type='text/css'>
+    <style>
+         body {
+            margin: 0;
+            padding: 0;
+            background: #eee;
+        }
+        #led-container {
+            position: absolute;
+            top: calc(50% - 60px);
+            top: -webkit-calc(50% - 60px);
+            left: calc(50% - 60px);
+            left: -webkit-calc(50% - 60px);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="led-container"></div>
+</body>
+
+<script>
+    $(document).ready(function () {
+        var led0 = new CoolLedMatrix("#led-container", 0, symbols.cross),
+            led1 = new CoolLedMatrix("#led-container", 1, symbols.warning),
+            led2 = new CoolLedMatrix("#led-container", 2, symbols.ok),
+            led3 = new CoolLedMatrix("#led-container", 3, symbols.alert);
+    });
+</script>
+
+</html>
