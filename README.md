@@ -29,7 +29,7 @@ Apply to this container the styles you want, but you have to have position: abso
 ```
 
 
-And your code create as many block as you need:
+And, on your code create as many led-matrix blocks as you need:
 
 ```
     var led0 = new CoolLedMatrix("#led-container", 0);
@@ -37,7 +37,7 @@ And your code create as many block as you need:
 ```
 
 
-If you need more symbols are really pretty easy to create new ones. 
+If you need more symbols is pretty easy to create new ones. 
 
 ```
 var symbols = {
