@@ -10,31 +10,55 @@
     <script src="cool-led-matrix.js"></script>
     <link href='cool-led-matrix.css' rel='stylesheet' type='text/css'>
     <style>
-         body {
+        body {
             margin: 0;
             padding: 0;
             background: #eee;
         }
+
         #led-container {
             position: absolute;
             top: calc(50% - 60px);
             top: -webkit-calc(50% - 60px);
-            left: calc(50% - 60px);
-            left: -webkit-calc(50% - 60px);
+            left: calc(20% - 60px);
+            left: -webkit-calc(20% - 60px);
         }
     </style>
 </head>
 
 <body>
-    <div id="led-container"></div>
+<div id="led-container"></div>
 </body>
 
 <script>
     $(document).ready(function () {
-        var led0 = new CoolLedMatrix("#led-container", 0, symbols.cross),
-            led1 = new CoolLedMatrix("#led-container", 1, symbols.warning),
-            led2 = new CoolLedMatrix("#led-container", 2, symbols.ok),
-            led3 = new CoolLedMatrix("#led-container", 3, symbols.alert);
+        var led0 = new CoolLedMatrix("#led-container", 0),
+                led1 = new CoolLedMatrix("#led-container", 1),
+                led2 = new CoolLedMatrix("#led-container", 2),
+                led3 = new CoolLedMatrix("#led-container", 3);
+
+        led0.draw(symbols.cross, "red");
+        led1.draw(symbols.warning, "yellow");
+        led2.draw(symbols.ok, "green");
+        led3.draw(symbols.alert, "red");
+
+        var palette1 = new Palette(["#444", "white", "red", "blue", "yellow", "green", "orange", "gray", "cyan", "magenta"]);
+
+        setTimeout(function () {
+            led0.drawPalette(symbols.block, palette1);
+        }, 2000);
+
+        setTimeout(function () {
+            led1.animate(symbols.bar, "red", 300, null);
+        }, 3000);
+
+        setTimeout(function () {
+            led0.animatePalette(symbols.block, palette1, 300, null, function (palette) {
+                palette.colors.push(palette.colors.shift());
+                return palette;
+            });
+        }, 3000);
+
     });
 </script>
 
